@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>购物车</title>
+	<link rel="stylesheet" type="text/css" href="css/cart.css">
+	<script type="text/javascript" src="js/jquery-3.0.0.js"></script>
+	<script type="text/javascript" src="js/cart.js"></script>
+</head>
+<body>
+	<table class="cart-table" cellspacing="0" cellpadding="0" border="1">
+		<tr bgcolor="#67D8F8" class="table-top">
+			<td>
+				<input type="checkbox" name="" id="all">全选
+			</td>
+			<td>商品图片</td>
+			<td>商品名称</td>
+			<td>单价</td>
+			<td>数量</td>
+			<td>总价</td>
+		</tr>
+		<tr class="goods">
+			<td><input type="checkbox" name="" class="selectd"></td>
+			<td><img src="image/1.jpg" class="images"></td>
+			<td>苍井空老师</td>
+			<td class="one-price">1.00</td>
+			<td>
+				<span class="add">+</span>
+				<input type="text" name="" class="nums" value="1" size="1">
+				<span class="reduce">-</span>
+			</td>
+			<td class="total">
+				1.00
+			</td>
+		</tr>
+		<tr class="goods">
+			<td><input type="checkbox" name="" class="selectd"></td>
+			<td><img src="image/2.jpg" class="images"></td>
+			<td>武藤兰老师</td>
+			<td class="one-price">2.00</td>
+			<td>
+				<span class="add">+</span>
+				<input type="text" name="" class="nums" value="1" size="1">
+				<span class="reduce">-</span>
+			</td>
+			<td class="total">
+				2.00
+			</td>
+		</tr>
+		<tr class="goods">
+			<td><input type="checkbox" name="" class="selectd"></td>
+			<td><img src="image/3.jpg" class="images"></td>
+			<td>吉泽明步老师</td>
+			<td class="one-price">3.01</td>
+			<td>
+				<span class="add">+</span>
+				<input type="text" name="" class="nums" value="1" size="1">
+				<span class="reduce">-</span>
+			</td>
+			<td class="total">
+				3.01
+			</td>
+		</tr>
+		<tr>
+			<td>已选中<span class="total-nums">0</span>件商品</td>
+			<td class="totals">合计:<span>￥</span><span class="total-price">0</span></td>
+			<td colspan="4"><button class="checks">提交订单</button></td>
+		</tr>
+	</table>
+</body>
+</html>

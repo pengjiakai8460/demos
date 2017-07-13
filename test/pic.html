@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片轮播</title>
+	<style type="text/css">
+		.img-box,.test{
+			width: 200px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.img-box  img{
+			width: 200px;
+			height: 200px;
+			display: block;
+		}
+		/** css Reset star like yahoo **/
+		body, div, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, p, th, td {
+			padding: 0;
+			margin: 0;
+		}
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		fieldset, img {
+			border: 0;
+		}
+		ul,li{list-style:none;}
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+			font-size: 100%;
+		}
+		.test .img-carsoure li{ 
+			list-style:none;
+			display:inline;
+		}
+		/** css Reset end **/
+	</style>
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="img-box">
+	<div class="test">
+		<ul class="img-carsoure">
+			<li><img src="image/1.jpg"></li>
+			<li><img src="image/2.jpg"></li>
+			<li><img src="image/3.jpg"></li>
+			<li><img src="image/4.jpg"></li>
+		</ul>
+	</div>
+	
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		var len = $(".img-carsoure li").length;
+		
+		var index = 0;
+		var times;
+		$(".img-box img").mouseover(function(){
+			index  =   $(".img-box img").index($(this));
+			showImg(index);
+		}).eq(0).mouseover();
+		$(".test").hover(function(){
+			clearInterval(times);
+		},function(){
+			times = setInterval(function(){
+				showImg(index);
+				index ++;
+				if(index == len) index = 0;
+			},2000);
+		}).trigger("mouseleave");
+	});
+	function showImg(index){
+		var height = $(".img-box .test").height();
+		$(".img-carsoure").stop(true,false).animate({bottom : -height * index},1000);
+		
+	}
+</script>
